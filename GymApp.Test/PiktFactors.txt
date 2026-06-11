@@ -1,0 +1,15 @@
+﻿Months: 4, 5, 10, 13, 15
+
+GroupTrainings: True, False
+
+Budget: 15, 17 , 24 
+
+TrainingTime: WholeDay, OnlyMorning, Other
+
+MembershipType: TypeA, TypeB, TypeC, TypeD
+
+if [TrainingTime] = "WholeDay" AND [Months] >= 5 then [MembershipType] = "TypeB";
+if [TrainingTime] = "WholeDay" AND [Months] >= 5 && [GroupTrainings] = "True" then [MembershipType] = "TypeA";
+if [TrainingTime] = "WholeDay" AND [Budget] <= 20 or [Months] < 5 then [MembershipType] = "null";
+if [TrainingTime] = "OnlyMorning" AND [Months] > 12 or [Budget] > 15 then [MembershipType] = "TypeC";
+if [TrainingTime] = "OnlyMorning" AND [TrainingTime] < 13 && [Budget] < 16 then [MembershipType] = "null";
