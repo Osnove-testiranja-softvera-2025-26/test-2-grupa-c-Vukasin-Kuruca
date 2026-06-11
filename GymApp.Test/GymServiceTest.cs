@@ -28,7 +28,7 @@ namespace GymApp.Test
             _gymService = new GymService(_paymentService, _trainingService, _performanceService);
                 
             }
-
+         
         [Test]
         public void DoStaffBonusPaymentCalculation_NoTrainings_ThrowsException()
         { 
